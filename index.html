@@ -3,9 +3,11 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Spotify</title>
-    <link rel="stylesheet" href="./reset.css"/>
-    <link rel="stylesheet" href="./style.css"/>
+    <title>Sonarix</title>
+    <link rel="stylesheet" href="./src/styles/reset.css"/>
+    <link rel="stylesheet" href="./src/styles/vars.css"/>
+    <link rel="stylesheet" href="./src/styles/sidebar-footer.css"/>
+    <link rel="stylesheet" href="./src/styles/main-content.css"/>
 
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/solid.css"
     integrity="sha384-Tv5i09RULyHKMwX0E8wJUqSOaXlyu3SQxORObAI08iUwIalMmN5L6AvlPX2LMoSE" crossorigin="anonymous" />
@@ -20,7 +22,7 @@
         <nav class="sidebar_navigation">
             <div class="logo">
                 <a href="">
-                    <img src="./assets/icons/logo-spotify.png" alt="spotify logo"/>
+                    <img src="./src/assets/icons/sonarix.png" alt="spotify logo"/>
                 </a>
             </div>
 
@@ -71,20 +73,53 @@
             </div>
         </div>
 
-        <footer class="announcement">
-            <div class="footer-content">
-                <span class="text title">Teste a versão 1.0 do Sonarix</span>
-                <span class="text subtitle">Escute suas músicas favoritas, crie suas playlists e compartilhe com os amigos!</span>
-            </div>
+    </div>
 
-            <div class="announcement-button">
-                <button class="footer-button">
-                    <span class="footer-button-text">Documentação</span>
+    <main class="main-container">
+        <nav class="header-navigation">
+            <div class="navigation">
+                <button class="arrow-left">
+                    <img src="./src/assets/icons/small-left.png" alt="Seta Esquerda">
+                </button>
+                <button class="arrow-right">
+                    <img src="./src/assets/icons/small-right.png" alt="Seta Direita">
                 </button>
             </div>
-        </footer>
 
-    </div>
+            <div class="header-search">
+                <img src="./src/assets/icons/search.png" alt="">
+                <input id="search-input" type="text" maxlength="800" placeholder="O que você quer ouvir?"/>
+            </div>
+
+            <div class="header-login">
+                <button class="subscribe">Inscreva-se</button>
+                <button class="login">Entrar</button>
+            </div>
+
+        </nav>
+
+        <div class="playlist-container">
+            <div id="result-playlist">
+                <div class="playlist">
+                    <h1 id="greeting">Boas Vindas</h1>
+                    <h2 class="greeting-subtitle">Navegar por todas as seções</h2>
+                </div>
+            </div>
+        </div>        
+    </main>
+
+    <footer class="announcement">
+        <div class="footer-content">
+            <span class="text title">Teste a versão 1.0 do Sonarix</span>
+            <span class="text subtitle">Escute suas músicas favoritas, crie suas playlists e compartilhe com os amigos!</span>
+        </div>
+
+        <div class="announcement-button">
+            <button class="footer-button">
+                <span class="footer-button-text">Documentação</span>
+            </button>
+        </div>
+    </footer>
 
 
     <script src="./app.js"></script>
