@@ -1,0 +1,9 @@
+{
+    "artists": [
+        {"id": 1, "name": "The Weeknd", "genre": "R&B", "urlImg": "https://i.scdn.co/image/ab6761610000e5eb9e528993a2820267b97f6aae"},
+        {"id": 2, "name": "ATEEZ", "genre": "K-pop", "urlImg": "https://i.scdn.co/image/ab6761610000e5ebd28d311ccd01e2fd8917cb5c"},
+        {"id": 3, "name": "Taylor Swift", "genre": "Pop", "urlImg": "https://i.scdn.co/image/ab6761610000e5ebe672b5f553298dcdccb0e676"},
+        {"id": 4, "name": "Ariana Grande", "genre": "Pop", "urlImg": "https://i.scdn.co/image/ab6761610000e5eb40b5c07ab77b6b1a9075fdc0"},
+        {"id": 5, "name": "The Rose", "genre": "Indie Rock", "urlImg": "https://i.scdn.co/image/ab6761610000e5ebd434a8b25f5a50277b05a402"}
+    ]
+}
