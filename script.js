@@ -4,21 +4,29 @@ const resultPlaylist = document.getElementById("result-playlists");
 const artistContainer = document.getElementById("artist-container");
 
 function requestApi(searchTerm) {
-    const url = `http://localhost:3000/artists`;
+    const url = "api-artists/artists.json";
     fetch(url)
-        .then((response) => response.json())
+        .then((response) => {
+            if (!response.ok) {
+                throw new Error('Erro na requisição: ' + response.status);
+            }
+            return response.json();
+        })
         .then((data) => {
-            // Filtrando os artistas manualmente
-            const filteredResults = data.filter(artist =>
+            const artists = data.artists;
+
+            const filteredResults = artists.filter(artist =>
                 artist.name.toLowerCase().includes(searchTerm.toLowerCase())
             );
 
             displayResults(filteredResults);
+        })
+        .catch((error) => {
+            console.error("Erro ao carregar os dados:", error);
         });
 }
 
 function displayResults(result) {
-    // Limpa os artistas anteriores antes de adicionar os novos
     artistContainer.innerHTML = "";
 
     if (result.length === 0) {
@@ -71,13 +79,30 @@ function displayResults(result) {
 
 searchInput.addEventListener("input", () => {
     const searchTerm = searchInput.value.trim();
+    console.log(searchTerm);
     
     if (searchTerm === "") {
         resultArtist.classList.add("hidden");
         resultPlaylist.classList.remove("hidden");
-        artistContainer.innerHTML = ""; // Limpa os resultados
+        artistContainer.innerHTML = "";
         return;
     }
 
     requestApi(searchTerm);
 });
+
+
+let currentAudio = null; 
+function playAudio(music, clickedDiv) {
+
+    if (currentAudio && !currentAudio.paused) {
+        currentAudio.pause();
+        currentAudio.currentTime = 0;
+        clickedDiv.style.backgroundColor = "";
+        return;
+    }
+
+    currentAudio = new Audio(music);
+    currentAudio.play();
+    clickedDiv.style.backgroundColor = "black";
+}

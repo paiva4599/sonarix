@@ -240,3 +240,7 @@ body{
     font-weight: 700;
     color: #fff;
 }
+
+.announcement .footer-button a{
+    text-decoration: none;
+}
